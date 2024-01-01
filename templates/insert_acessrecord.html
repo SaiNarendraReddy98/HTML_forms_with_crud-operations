@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert_acessrecord</title>
+</head>
+<body>
+    <center>
+        <h1>insert_acessrecord</h1>
+        <form method="post">
+        {% csrf_token %}
+            <label for="na">Acess_record</label>
+            <select name="na" id="na">
+            {% for n in webpages %}
+                <option value="{{n.pk}}">
+                     {{n.name}}
+                </option>
+            {% endfor %}
+            </select><br><br>
+
+            <label for="dt">Date</label>
+            <input type="date" name="dt" id="dt"> <br><br>
+
+            <label for="au">Author</label>
+            <input type="text" name="au" id="au"> <br><br>
+
+            <input type="submit" value="insert_acessrecord">
+        </form>
+    </center>
+</body>
+</html>

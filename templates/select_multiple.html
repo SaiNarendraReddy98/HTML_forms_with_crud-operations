@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select_multiple</title>
+</head>
+<body>
+    <center>
+        <h1>Select_multiple_webpages</h1>
+        <form action="" method="POST">
+        {% csrf_token %}
+        <label for="tn">Topic-names</label>
+        <select name="tn" id="tn" multiple>
+            {% for i in topics %}
+                <option value="{{i.topic_name}}">{{i.topic_name}}</option>
+            {% endfor %}
+        </select> <br><br>
+        <input type="submit" value="select_multiple">
+        </form>
+
+        <h1>Select_multiple_accessrecord</h1>
+        <form method="POST">
+        {% csrf_token %}
+            <label for="tn">Acess-record</label>
+            <select name="tn" id="tn" multiple>
+                {% for a in ar %}
+                    <option value="{{a.name}}">{{a.name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <input type="submit" value="select_multiple">
+        </form>
+    </center>
+</body>
+</html>
