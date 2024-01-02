@@ -64,8 +64,7 @@ def insert_acessrecord(request):
 
 def select_multiple(request):
     QLTO = Topic.objects.all()
-    QLAO = AcessRecord.objects.all()
-    d={'topics':QLTO , 'ar':QLAO}
+    d={'topics':QLTO}
     if request.method == 'POST':
         topic_list = request.POST.getlist('tn')
         QLWO=Webpage.objects.none()
@@ -77,5 +76,12 @@ def select_multiple(request):
     
 
     return render(request,'select_multiple.html',d)
+
+
+def check_box(request):
+    QLTO = Topic.objects.all()
+    d={'topics':QLTO}
+
+    return render(request,'check_box.html',d)
 
 

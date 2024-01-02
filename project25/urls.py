@@ -24,5 +24,6 @@ urlpatterns = [
     path('insert_webpage/',insert_webpage,name='insert_webpage'),
     path('insert_acessrecord/',insert_acessrecord,name='insert_acessrecord'),
     path('select_multiple/',select_multiple,name='select_multiple'),
+    path('check_box/',check_box,name='check_box'),
     
 ]
